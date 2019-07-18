@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Artistes - Le Maquis Label{% endblock %}
+
+{% block body %}
+<h1>Artistes</h1>
+<div class="row gallery">
+    <div class="col-6 col-md-4">
+        <a href={{ path('yanuzi') }}><img src={{ asset('img/250x250.png') }} alt="Yanuzi"></a>
+    </div>
+    <div class="col-6 col-md-4">
+        <a href={{ path('mrAbitbol') }}><img src={{ asset('img/250x250.png') }} alt="Mr Abitbol"></a>
+    </div>
+    <div class="col-6 col-md-4">
+        <a href={{ path('godhiva') }}><img src={{ asset('img/250x250.png') }} alt="Godhiva"></a>
+    </div>
+    <div class="col-6 offset-md-4 col-md-4">
+        <a href={{ path('beatnik') }}><img src={{ asset('img/250x250.png') }} alt="Beatnik"></a>
+    </div>
+</div>
+{% endblock %}

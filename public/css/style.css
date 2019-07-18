@@ -1,0 +1,72 @@
+/***** FONT *****/
+@font-face {
+    font-family: 'Another_America';
+    src: url('../fonts/Another_America.otf') format('truetype'),
+         url('../fonts/Another_America.ttf') format('truetype');
+}
+
+/***** GENERAL *****/
+body {
+    padding-top: 101px;
+}
+
+.navbar .navbar-brand {
+    font-family: 'Another_America';
+    font-size: 50px;
+}
+
+footer {
+    background: #000;
+    color: rgb(175, 175, 175);
+}
+
+.reseaux-sociaux a {
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 5px 15px 5px;
+}
+
+.reseaux-sociaux a.fa-facebook-f:hover {
+    color: #3B5998;
+}
+
+.reseaux-sociaux a.fa-instagram:hover {
+    color: #C32AA3;
+}
+
+.reseaux-sociaux a.fa-soundcloud:hover {
+    color: #FF3300;
+}
+
+.reseaux-sociaux a.fa-youtube:hover {
+    color: #FF0000;
+}
+
+footer p {
+    padding: 0 15px 15px 15px;
+}
+
+/***** PAGE CONCERTS *****/
+.container-concert table {
+    border: 1px solid black;
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+}
+
+/***** PAGE CONTACT *****/
+.container-contact form {
+    padding-bottom: 10px;
+}
+
+.contact-input input, .contact-input textarea {
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}

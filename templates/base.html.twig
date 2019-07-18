@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Besoin d'enregistrement/mixer dans un cadre professionnel. Le studio Le Maquis vous accueil pour vos projets musicaux ou audio-visuels.">
+        <meta name"author" content="Bastien Gauthier">
+        <title>{% block title %}Le Maquis label{% endblock %}</title>
+
+        {% block stylesheets %}
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Style -->
+        <link rel="stylesheet" href={{ asset('css/style.css') }}>
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href={{ path('home') }}>Le Maquis</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href={{ path('home') }}>Accueil <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{ path('albums') }}>Albums</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{ path('studio') }}>Studio Vidéos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{ path('artistes') }}>Artistes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{ path('concerts') }}>Concerts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{ path('contacts') }}>Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+
+        <footer id="footer">
+            <div class="container">
+                <div class="reseaux-sociaux text-center">
+                    <a href="https://www.facebook.com/lemaquislabel/" class="fab fa-facebook-f fa-3x"></a>
+                    <a href="https://www.instagram.com/lemaquislabel/?hl=fr" class="fab fa-instagram fa-3x"></a>
+                    <a href="https://soundcloud.com/lemaquisprod" class="fab fa-soundcloud fa-3x"></a>
+                    <a href="https://www.youtube.com/user/RabooKC2Prod" class="fab fa-youtube fa-3x"></a>
+                </div>
+                <p class="text-center">Copyright © Le Maquis since 2019 - Bastien Gauthier</p>
+            </div>
+        </footer>
+        
+        {% block javascripts %}
+        <!-- Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/53a0df5401.js"></script>
+        <!-- JavaScript -->
+        <script type="text/javascript" src={{ asset('js/app.js')}}></script>
+        {% endblock %}
+    </body>
+</html>
