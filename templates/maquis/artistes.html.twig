@@ -4,18 +4,14 @@
 
 {% block body %}
 <h1>Artistes</h1>
+
 <div class="row gallery">
-    <div class="col-6 col-md-4">
-        <a href={{ path('yanuzi') }}><img src={{ asset('img/250x250.png') }} alt="Yanuzi"></a>
-    </div>
-    <div class="col-6 col-md-4">
-        <a href={{ path('mrAbitbol') }}><img src={{ asset('img/250x250.png') }} alt="Mr Abitbol"></a>
-    </div>
-    <div class="col-6 col-md-4">
-        <a href={{ path('godhiva') }}><img src={{ asset('img/250x250.png') }} alt="Godhiva"></a>
-    </div>
-    <div class="col-6 offset-md-4 col-md-4">
-        <a href={{ path('beatnik') }}><img src={{ asset('img/250x250.png') }} alt="Beatnik"></a>
-    </div>
+    {% for artiste in artistes %}
+        <div class="col-6 col-md-4">
+            <a href={{ path('show_artiste', {'id': artiste.id}) }}><img src={{ artiste.image }} alt="Yanuzi"></a>
+        </div>
+    {% endfor %}
 </div>
+
+
 {% endblock %}

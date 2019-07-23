@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Artiste;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use Symfony\Component\Form\FormBuilder;
+use App\Notification\ContactNotification;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -41,7 +44,27 @@ class MaquisController extends AbstractController
      */
     public function artistes()
     {
-        return $this->render('maquis/artistes.html.twig');
+        $repo = $this->getDoctrine()->getRepository(Artiste::class);
+
+        $artistes = $repo->findAll();
+
+        return $this->render('maquis/artistes.html.twig', [
+            'artistes' => $artistes
+        ]);
+    }
+
+    /**
+     * @Route("/artistes/{id}", name="show_artiste")
+     */
+    public function showArtiste($id)
+    {
+        $repo = $this->getDoctrine()->getRepository(Artiste::class);
+
+        $artiste = $repo->find($id);
+
+        return $this->render('artistes/showArtiste.html.twig', [
+            'artiste' => $artiste
+        ]);
     }
 
     /**
@@ -53,13 +76,20 @@ class MaquisController extends AbstractController
     }
 
     /**
-     * @Route("/contacts", name="contacts")
+     * @Route("/contact", name="contact")
      */
-    public function contacts()
+    public function contacts(Request $request)
     {
         $contact = new Contact();
-
         $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            dd($contact);
+            /*
+            return $this->redirectToRoute();
+            */
+        }
 
         return $this->render('maquis/contacts.html.twig', [
             'contactForm' => $form->createView()
@@ -72,37 +102,5 @@ class MaquisController extends AbstractController
     public function admin()
     {
         return $this->render('maquis/admin.html.twig');
-    }
-
-    /**
-     * @Route("/yanuzi", name="yanuzi")
-     */
-    public function yanuzi()
-    {
-        return $this->render('artistes/yanuzi.html.twig');
-    }
-
-    /**
-     * @Route("/mrAbitbol", name="mrAbitbol")
-     */
-    public function mrAbitbol()
-    {
-        return $this->render('artistes/mrAbitbol.html.twig');
-    }
-
-    /**
-     * @Route("/godhiva", name="godhiva")
-     */
-    public function godhiva()
-    {
-        return $this->render('artistes/godhiva.html.twig');
-    }
-
-    /**
-     * @Route("/beatnik", name="beatnik")
-     */
-    public function beatnik()
-    {
-        return $this->render('artistes/beatnik.html.twig');
     }
 }
