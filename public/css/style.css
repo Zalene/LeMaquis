@@ -46,6 +46,11 @@ footer p {
     padding: 0 15px 15px 15px;
 }
 
+/***** PAGE ARTISTES *****/
+.container-artiste {
+    padding: 15px;
+}
+
 /***** PAGE CONCERTS *****/
 .container-concert table {
     border: 1px solid black;

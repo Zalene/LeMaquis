@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Artiste;
 use App\Entity\Contact;
 use App\Form\ContactType;
+use App\Repository\ArtisteRepository;
 use Symfony\Component\Form\FormBuilder;
 use App\Notification\ContactNotification;
 use Symfony\Component\HttpFoundation\Request;
@@ -42,10 +43,8 @@ class MaquisController extends AbstractController
     /**
      * @Route("/artistes", name="artistes")
      */
-    public function artistes()
+    public function artistes(ArtisteRepository $repo)
     {
-        $repo = $this->getDoctrine()->getRepository(Artiste::class);
-
         $artistes = $repo->findAll();
 
         return $this->render('maquis/artistes.html.twig', [
@@ -56,12 +55,8 @@ class MaquisController extends AbstractController
     /**
      * @Route("/artistes/{id}", name="show_artiste")
      */
-    public function showArtiste($id)
+    public function showArtiste(Artiste $artiste)
     {
-        $repo = $this->getDoctrine()->getRepository(Artiste::class);
-
-        $artiste = $repo->find($id);
-
         return $this->render('artistes/showArtiste.html.twig', [
             'artiste' => $artiste
         ]);
