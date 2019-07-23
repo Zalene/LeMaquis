@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formArtiste 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}Administration des artistes{% endblock %}
+
+{% block body %}
+<div>
+    <h1>Administration des artistes</h1>
+
+    {{ form_start(formArtiste) }}
+
+    {{ form_row(formArtiste.name) }}
+
+    {{ form_row(formArtiste.bio) }}
+
+    {{ form_row(formArtiste.image) }}
+
+    <button type="submit" class="btn btn-success">
+        {% if editMode %}
+            Modifier l'artiste
+        {% else %}
+            Ajouter l'artiste
+        {% endif %}
+    </button>
+
+    {{ form_end(formArtiste) }}
+</div>
+{% endblock %}

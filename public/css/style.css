@@ -51,6 +51,11 @@ footer p {
     padding: 15px;
 }
 
+.container-artiste img {
+    height: 250px;
+    width: 250px;
+}
+
 /***** PAGE CONCERTS *****/
 .container-concert table {
     border: 1px solid black;
@@ -74,4 +79,9 @@ footer p {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
+}
+
+/***** PAGE ADMIN *****/
+.create-artiste-btn {
+    padding: 15px 0 15px 0;
 }

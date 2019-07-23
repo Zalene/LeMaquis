@@ -4,11 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Artiste;
 use App\Entity\Contact;
+use App\Form\ArtisteType;
 use App\Form\ContactType;
 use App\Repository\ArtisteRepository;
-use Symfony\Component\Form\FormBuilder;
-use App\Notification\ContactNotification;
 use Symfony\Component\HttpFoundation\Request;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -53,6 +53,63 @@ class MaquisController extends AbstractController
     }
 
     /**
+     * @Route("/artistes/new", name="artiste_create")
+     */
+    public function createArtistes(Request $request, ObjectManager $manager)
+    {
+        $artiste = new Artiste();
+
+        $form = $this->createForm(ArtisteType::class, $artiste);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+
+            $manager->persist($artiste);
+            $manager->flush();
+
+            return $this->redirectToRoute('show_artiste', ['id' => $artiste->getId()]);
+        }
+
+        return $this->render('admin/artistesAdmin.html.twig', [
+            'formArtiste' => $form->createView(),
+            'editMode' => $artiste->getId() !==null
+        ]);
+    }
+
+    /**
+     * @Route("/artistes/{id}/edit", name="artiste_edit")
+     */
+    public function editArtistes(Artiste $artiste, Request $request, ObjectManager $manager)
+    {
+        $form = $this->createForm(ArtisteType::class, $artiste);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+
+            $manager->persist($artiste);
+            $manager->flush();
+
+            return $this->redirectToRoute('show_artiste', ['id' => $artiste->getId()]);
+        }
+
+            return $this->render('admin/artistesAdmin.html.twig', [
+            'formArtiste' => $form->createView(),
+            'editMode' => $artiste->getId() !==null
+        ]);
+    }
+
+    /**
+     * @Route("/artistes/{id}/delete", name="artiste_delete")
+     */
+    public function deleteArtistes(Artiste $artiste, ObjectManager $manager)
+    {
+        $manager->remove($artiste);
+        $manager->flush();
+
+        return $this->redirectToRoute('admin');
+    }
+
+    /**
      * @Route("/artistes/{id}", name="show_artiste")
      */
     public function showArtiste(Artiste $artiste)
@@ -61,6 +118,7 @@ class MaquisController extends AbstractController
             'artiste' => $artiste
         ]);
     }
+
 
     /**
      * @Route("/concerts", name="concerts")
@@ -94,8 +152,12 @@ class MaquisController extends AbstractController
     /**
      * @Route("/admin", name="admin")
      */
-    public function admin()
+    public function admin(ArtisteRepository $repo)
     {
-        return $this->render('maquis/admin.html.twig');
+        $artistes = $repo->findAll();
+
+        return $this->render('admin/admin.html.twig', [
+            'artistes' => $artistes
+        ]);
     }
 }
