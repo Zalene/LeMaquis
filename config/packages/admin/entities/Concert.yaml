@@ -1,0 +1,15 @@
+easy_admin:
+  entities:
+    Concert:
+      class: App\Entity\Concert
+      form:
+        fields:
+          - {property: 'name', label: "Nom du concert"}
+          - {property: 'date', label: "Date du concert"}
+          - {property: 'town', label: "Lieu du concert"}
+          - {property: 'description'}
+          - {property: 'artiste', label: "Artistes"}
+      list:
+        actions:
+          - {name: 'edit', icon: 'edit', label: false, css_class: 'btn btn-secondary'}
+          - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}

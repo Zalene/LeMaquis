@@ -1,0 +1,15 @@
+easy_admin:
+  entities:
+    Album:
+      class: App\Entity\Album
+      form:
+        fields:
+          - {property: 'title', label: "Nom de l'album"}
+          - {property: 'date', label: "Date de sortie"}
+          - {property: 'description'}
+          - {property: 'img', label: "Image"}
+          - {property: 'artiste', label: "Artistes"}
+      list:
+        actions:
+          - {name: 'edit', icon: 'edit', label: false, css_class: 'btn btn-secondary'}
+          - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}

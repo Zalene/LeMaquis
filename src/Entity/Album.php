@@ -129,6 +129,6 @@ class Album
 
     public function __toString()
     {
-        return $this->name;
+        return $this->title;
     }
 }

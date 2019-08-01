@@ -1,0 +1,7 @@
+easy_admin:
+  design:
+    menu:
+      - {icon: 'home', label: 'Accueil', url: 'http://127.0.0.1:8000/', rel: 'index'}
+      - {entity: 'Artiste', icon: 'user-alt', label: 'Artistes'}
+      - {entity: 'Album', icon: 'compact-disc', label: 'Albums'}
+      - {entity: 'Concert', icon: 'microphone-alt', label: 'Concerts'}

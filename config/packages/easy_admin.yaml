@@ -1,5 +1,3 @@
-easy_admin:
-    entities:
-        - App\Entity\Artiste
-        - App\Entity\Album
-        - App\Entity\Concert
+imports:
+    - {resource: admin/}
+    
