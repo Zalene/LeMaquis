@@ -6,7 +6,9 @@ use App\Entity\Artiste;
 use App\Entity\Contact;
 use App\Form\ArtisteType;
 use App\Form\ContactType;
+use App\Repository\AlbumRepository;
 use App\Repository\ArtisteRepository;
+use App\Repository\ConcertRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
@@ -27,9 +29,13 @@ class MaquisController extends AbstractController
     /**
      * @Route("/albums", name="albums")
      */
-    public function albums()
+    public function albums(AlbumRepository $repo)
     {
-        return $this->render('maquis/albums.html.twig');
+        $albums = $repo->findAll();
+
+        return $this->render('maquis/albums.html.twig', [
+            'albums' => $albums
+        ]);
     }
 
     /**
@@ -123,9 +129,13 @@ class MaquisController extends AbstractController
     /**
      * @Route("/concerts", name="concerts")
      */
-    public function concerts()
+    public function concerts(ConcertRepository $repo)
     {
-        return $this->render('maquis/concerts.html.twig');
+        $concerts = $repo->findAll();
+
+        return $this->render('maquis/concerts.html.twig', [
+            'concerts' => $concerts
+        ]);
     }
 
     /**

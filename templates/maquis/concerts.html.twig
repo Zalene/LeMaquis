@@ -8,12 +8,14 @@
 
     <div class="one-concert">
         <table class="text-center">
+        {% for concert in concerts %}
             <tr>
-                <td><i class="far fa-calendar-alt fa-2x"></i> Date du concert</td>
-                <td><i class="fas fa-microphone-alt fa-2x"></i> Nom de l'artiste</td>
-                <td><i class="fas fa-map-pin fa-2x"></i> Lieu du concert</td>
+                <td><i class="far fa-calendar-alt fa-2x"></i> {{ concert.name }}</td>
+                <td><i class="fas fa-microphone-alt fa-2x"></i> {{ concert.artiste[0] }}</td>
+                <td><i class="fas fa-map-pin fa-2x"></i> {{ concert.town }}</td>
                 <td><i class="far fa-calendar-check fa-2x"></i> Réservation</td>
             </tr>
+        {% endfor %}
         </table>
     </div>
 </section>
