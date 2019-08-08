@@ -3,9 +3,13 @@
 {% block title %}Artiste{% endblock %}
 
 {% block body %}
-<div class="container">
+<div id="menu-top">
+{% include 'parts/menu.html.twig' %}
+</div>
+
+<div class="container one-artiste">
     <h1>{{ artiste.name }}</h1>
-    <img src={{ artiste.image }} alt="Yanuzi"></a>
+    <img src={{ artiste.image }} alt="Artiste Le Maquis Label"></a>
     <p>{{ artiste.bio }}</p>
 </div>
 {% endblock %}

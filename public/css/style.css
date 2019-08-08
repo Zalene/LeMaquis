@@ -6,13 +6,9 @@
 }
 
 /***** GENERAL *****/
-body {
-    padding-top: 101px;
-}
-
-.navbar .navbar-brand {
-    font-family: 'Another_America';
-    font-size: 50px;
+html, body {
+    height:100%;
+    margin:0;
 }
 
 footer {
@@ -46,7 +42,79 @@ footer p {
     padding: 0 15px 15px 15px;
 }
 
-/***** PAGE ARTISTES *****/
+.background-black {
+    background: #000;
+    color: #fff;
+}
+
+.background-white {
+    background: #fff;
+}
+
+/***** MENU *****/
+/*
+#menu-scroll {
+    margin-top:-101px;
+}
+*/
+.navbar .navbar-brand {
+    font-family: 'Another_America';
+    font-size: 50px;
+}
+
+.bg-light {
+    background-color: rgba(248, 249, 250, 0.75) !important;
+}
+
+#menu-scroll header {
+    height:80px;
+}
+
+#menu-scroll header.fixed {
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index: 1;
+}
+
+#menu-top {
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+}
+
+.one-artiste {
+    padding-top: 101px;
+}
+
+
+/***** GALLERY *****/
+.container-gallery {
+    background-image: url(../img/le-maquis-1.jpg);
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+    height: 100%;
+}
+
+.text-gallery h1 {
+    font-family: 'Another_America';
+    font-size: 140px;
+}
+
+.text-gallery li {
+    display: inline;
+}
+
+/***** STUDIO *****/
+.img-studio {
+    width: 682px;
+    height: 383x;
+}
+
+/***** ARTISTES *****/
 .container-artiste {
     padding: 15px;
 }
@@ -56,15 +124,14 @@ footer p {
     width: 250px;
 }
 
-/***** PAGE CONCERTS *****/
+/***** CONCERTS *****/
 .container-concert table {
-    border: 1px solid black;
     margin-left:auto;
     margin-right:auto;
     width:100%;
 }
 
-/***** PAGE CONTACT *****/
+/***** CONTACT *****/
 .container-contact form {
     padding-bottom: 10px;
 }
@@ -81,7 +148,4 @@ footer p {
     border-radius: .25rem;
 }
 
-/***** PAGE ADMIN *****/
-.create-artiste-btn {
-    padding: 15px 0 15px 0;
-}
+/***** TEST *****/
