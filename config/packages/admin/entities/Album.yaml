@@ -10,6 +10,15 @@ easy_admin:
           - {property: 'img', label: "Image"}
           - {property: 'artiste', label: "Artistes"}
       list:
+        fields:
+          - {property: 'id', label: "N°"}
+          - {property: 'title', label: "Nom de l'album"}
+          - {property: 'date', label: "Date de sortie"}
+          - {property: 'img', label: "Image"}
+          - {property: 'artiste', label: "Artistes"}
         actions:
+          - {name: 'new', label: 'Ajouter', icon: 'plus'}
+          - {name: 'search', label: 'Recherche'}
           - {name: 'edit', icon: 'edit', label: false, css_class: 'btn btn-secondary'}
           - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}
+      

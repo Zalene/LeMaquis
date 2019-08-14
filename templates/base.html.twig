@@ -9,6 +9,11 @@
         {% block stylesheets %}
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Fonts -->
+            <!-- Title -->
+        <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200&display=swap" rel="stylesheet">
+            <!-- Paragraph -->
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
         <!-- Style -->
         <link rel="stylesheet" href={{ asset('css/style.css') }}>
         {% endblock %}
@@ -18,14 +23,17 @@
 
         <footer id="footer">
             <div class="container">
-                <a href="http://127.0.0.1:8000/admintest">Admin</a>
                 <div class="reseaux-sociaux text-center">
                     <a href="https://www.facebook.com/lemaquislabel/" class="fab fa-facebook-f fa-3x"></a>
                     <a href="https://www.instagram.com/lemaquislabel/?hl=fr" class="fab fa-instagram fa-3x"></a>
                     <a href="https://soundcloud.com/lemaquisprod" class="fab fa-soundcloud fa-3x"></a>
                     <a href="https://www.youtube.com/user/RabooKC2Prod" class="fab fa-youtube fa-3x"></a>
                 </div>
-                <p class="text-center">Copyright © Le Maquis since 2019 - Bastien Gauthier</p>
+                <div class="footer-link text-center">
+                    <a href="#">Mention Légales</a>
+                    <a href="http://127.0.0.1:8000/admin">Admin</a>
+                </div>
+                <p class="text-center">Copyright © Le Maquis {{ "now"|date("Y") }}</p>
             </div>
         </footer>
         

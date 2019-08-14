@@ -8,6 +8,14 @@ easy_admin:
           - {property: 'bio', label: "Biographie"}
           - {property: 'image'}
       list:
+        fields:
+          - {property: 'id', label: "N°"}
+          - {property: 'name', label: "Artiste"}
+          - {property: 'image', label: "Image"}
+          - {property: 'albums', label: "Albums"}
+          - {property: 'concerts', label: "Concerts"}
         actions:
+          - {name: 'new', label: 'Ajouter', icon: 'plus'}
+          - {name: 'search', label: 'Recherche'}
           - {name: 'edit', icon: 'edit', label: false, css_class: 'btn btn-secondary'}
           - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}

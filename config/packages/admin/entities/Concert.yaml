@@ -10,6 +10,14 @@ easy_admin:
           - {property: 'description'}
           - {property: 'artiste', label: "Artistes"}
       list:
+        fields:
+          - {property: 'id', label: "N°"}
+          - {property: 'name', label: "Nom du concert"}
+          - {property: 'date', label: "Date du concert"}
+          - {property: 'town', label: "Lieu du concert"}
+          - {property: 'artiste', label: "Artistes"}
         actions:
+          - {name: 'new', label: 'Ajouter', icon: 'plus'}
+          - {name: 'search', label: 'Recherche'}
           - {name: 'edit', icon: 'edit', label: false, css_class: 'btn btn-secondary'}
           - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}

@@ -19,10 +19,11 @@ class MaquisController extends AbstractController
     /** 
      *@Route("/", name="home")
      */
-    public function home(ArtisteRepository $repoA, ConcertRepository $repoC, Request $request)
+    public function home(AlbumRepository $repoAl, ArtisteRepository $repoA, ConcertRepository $repoC, Request $request)
     {
         $artistes = $repoA->findAll();
         $concerts = $repoC->findAll();
+        $albums = $repoAl->findAll();
 
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
