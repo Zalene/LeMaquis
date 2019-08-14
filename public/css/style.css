@@ -90,7 +90,12 @@ footer p {
 }
 
 .container-type {
-    padding: 50px 0 50px 0;
+    padding: 80px 0 110px 0;
+}
+
+.citation {
+    font-style: italic;
+    font-size: 13px;
 }
 
 /***** MENU *****/
@@ -131,6 +136,9 @@ footer p {
     padding-top: 101px;
 }
 
+/*div:target {
+    padding-top: 101px;
+}*/
 
 /***** GALLERY *****/
 .container-gallery {
@@ -167,8 +175,21 @@ footer p {
     display: inline;
 }
 
+/***** SERVICES *****/
+.service-item h3 {
+    margin-top: 15px;
+}
+
+.service-img {
+    width: 70px;
+    height: 70px;
+}
+
+/***** CLIP *****/
+
 /***** STUDIO *****/
 .img-studio {
+    margin: 30px 0 30px 0;
     width: 682px;
     height: 383x;
 }
@@ -181,6 +202,11 @@ footer p {
 .container-artiste img {
     height: 250px;
     width: 250px;
+}
+
+/***** ALBUMS *****/
+.gallery-albums {
+    padding-top: 101px;
 }
 
 /***** CONCERTS *****/
