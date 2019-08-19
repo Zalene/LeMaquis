@@ -99,11 +99,6 @@ footer p {
 }
 
 /***** MENU *****/
-/*
-#menu-scroll {
-    margin-top:-101px;
-}
-*/
 .navbar .navbar-brand {
     font-family: 'Another_America';
     font-size: 50px;
@@ -142,7 +137,7 @@ footer p {
 
 /***** GALLERY *****/
 .container-gallery {
-    background-image: url(../img/le-maquis-1.jpg);
+    background-image: url(../img/le-maquis-2.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -152,7 +147,7 @@ footer p {
 }
 
 .container-wrap {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.7);
     background-attachment: fixed;
     background-size: cover;
     height: 100%;
@@ -235,4 +230,9 @@ footer p {
 
 .btn-contact {
     margin-top: 15px;
+}
+
+.contact-img {
+    width: 50px;
+    height: 50px;
 }

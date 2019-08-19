@@ -13,7 +13,7 @@
                     <a href="https://www.facebook.com/lemaquislabel/" class="fab fa-facebook-f fa-2x"></a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/lemaquislabel/?hl=fr" class="fab fa-instagram fa-2x"></a>
+                    <a href="https://www.instagram.com/lemaquistv/?hl=fr" class="fab fa-instagram fa-2x"></a>
                 </li>
                 <li>
                     <a href="https://soundcloud.com/lemaquisprod" class="fab fa-soundcloud fa-2x"></a>
@@ -22,6 +22,26 @@
                     <a href="https://www.youtube.com/user/RabooKC2Prod" class="fab fa-youtube fa-2x"></a>
                 </li>
             </ul>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h2 class="h1-responsive font-weight-bold my-4">Nos Concerts</h2>
+                    <div class="one-concert">
+                        <table>
+                        {% for concert in concerts %}
+                            <tr>
+                                <td><i class="far fa-calendar-alt fa-2x"></i> {{ concert.name }}</td>
+                                <td><i class="fas fa-microphone-alt fa-2x"></i> {% for artiste in concert.artiste %} {{ artiste }} {% endfor %}</td>
+                                <td><i class="fas fa-map-pin fa-2x"></i> {{ concert.town }}</td>
+                                <td><i class="far fa-calendar-check fa-2x"></i> Réservation</td>
+                            </tr>
+                        {% endfor %}
+                        </table>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <iframe width="90%" height="300" scrolling="no" frameborder="no" allow="autoplay" mute="1" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/379486016&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                </div>            
+            </div>
         </div>
     </div>
 </div>
@@ -29,83 +49,10 @@
 <div id="menu-scroll">
 {% include 'parts/menu.html.twig' %}
 </div>
-<!-- Services -->
-<div id="container-service" class="container-services container-type background-black">
-    <div class="container">
-        <h2 class="h1-responsive font-weight-bold text-center my-4">Nos Services</h2>
-        <hr class="col-md-4 col-md-offset-4">
-        <div class="row">
-            <div class="col-md-3 text-center">
-                <div class="service-item">
-                    <img class="service-img" src="img/advice.png" alt="Casque">
-                    <h3>Conseil</h3>
-                    <p>Notre équipe vous accompagne dans la création de vos projets</p>
-                </div>
-            </div>
-            <div class="col-md-3 text-center">
-                <div class="service-item">
-                    <img class="service-img" src="img/microphone.png" alt="Casque">
-                    <h3>Enregistrement</h3>
-                    <p>Profiter d'un micro et d'un pré-ampli Vintage de classe A</p>
-                </div>
-            </div>
-            <div class="col-md-3 text-center">
-                <div class="service-item">
-                    <img class="service-img" src="img/headphones.png" alt="Casque">
-                    <h3>Mixage</h3>
-                    <p>Le studio est équipé d'enceintes de monitoring APS Klasik, Notre Ingé-son maison Beatnik est à votre écoute</p>
-                </div>
-            </div>
-            <div class="col-md-3 text-center">
-                <div class="service-item">
-                    <img class="service-img" src="img/mixer.png" alt="Casque">
-                    <h3>Instrumentales</h3>
-                    <p>Vous avez accés à un catalogue d'une centaine de production HipHop/Rap</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Clip -->
-<div id="container-clip" class="container-clip container-type background-white">
-    <div class="container">
-        <h2 class="h1-responsive font-weight-bold text-center my-4">Dernier clip</h2>
-        <hr class="col-md-4 col-md-offset-4">
-        <div class="clip-video text-center">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/66hPP7OCwCc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
-</div>
-<!-- Studio -->
-<div id="container-studio" class="container-studio container-type background-black">
-    <div class="container">
-        <h2 class="h1-responsive font-weight-bold text-center my-4">Studio Vidéos</h2>
-        <hr class="col-md-4 col-md-offset-4">
-        <div class="text-center">
-            <p>Besoin d'enregistrer/mixer une chanson, un album , un 16 mesures dans un cadre professionnel. Le studio Le Maquis vous accueille pour vos projets musicaux ou audio-visuels.</p>
-            <img class="img-studio" src="img/DSC_0005.jpg" alt="studio vidéo">
-            <p class="citation">Le Maquis est un collectif regroupant des chanteurs/M.C, Beatmakers et Musiciens. Possibilité de création d'ateliers ou de cours particuliers.</p>
-        </div>
-    </div>
-</div>
-<!-- Artistes -->
-<div id="container-artiste" class="container-artiste container-type background-white">
-    <div class="container">
-        <h2 class="h1-responsive font-weight-bold text-center my-4">Artistes</h2>
-        <hr class="col-md-4 col-md-offset-4">
-        <div class="row gallery">
-        {% for artiste in artistes %}
-            <div class="col-6 col-md-4 artiste-img">
-                <a href={{ path('show_artiste', {'id': artiste.id}) }}><img src={{ artiste.image }} alt="Le Maquis artiste"></a>
-            </div>
-        {% endfor %}
-        </div>
-    </div>
-</div>
 <!-- Concerts -->
 <div id="container-concert" class="container-concert container-type background-black">
     <div class="container">
-        <h2 class="h1-responsive font-weight-bold text-center my-4">Concerts</h2>
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Albums</h2>
         <hr class="col-md-4 col-md-offset-4">
         <div class="one-concert">
             <table>
@@ -118,6 +65,79 @@
                 </tr>
             {% endfor %}
             </table>
+        </div>
+    </div>
+</div>
+<!-- Clip -->
+<div id="container-clip" class="container-clip container-type background-white">
+    <div class="container">
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Dernier clip</h2>
+        <hr class="col-md-4 col-md-offset-4">
+        <div class="clip-video text-center">
+            <iframe width="560" height="315" src="https://youtube.com/embed/66hPP7OCwCc?autoplay=1&controls=1&showinfo=0&autohide=1&mute=1&loop=1&playlist=66hPP7OCwCc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+<!-- Services -->
+<div id="container-service" class="container-services container-type background-black">
+    <div class="container">
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Nos Services</h2>
+        <hr class="col-md-4 col-md-offset-4">
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <div class="service-item">
+                    <img class="service-img" src="img/launch_mono.png" alt="Instrumentales">
+                    <h3>Instrumentales</h3>
+                    <p>Vous avez accés à un catalogue d'une centaine de production HipHop/Rap</p>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="service-item">
+                    <img class="service-img" src="img/microphone_mono.png" alt="Enregistrement">
+                    <h3>Enregistrement</h3>
+                    <p>Profiter d'un micro et d'un pré-ampli Vintage de classe A</p>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="service-item">
+                    <img class="service-img" src="img/headphones_mono.png" alt="Mixage">
+                    <h3>Mixage</h3>
+                    <p>Le studio est équipé d'enceintes de monitoring APS Klasik, notre Ingé-son maison Beatnik est à votre écoute</p>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="service-item">
+                    <img class="service-img" src="img/video_mono.png" alt="Vidéo">
+                    <h3>Vidéo</h3>
+                    <p>Nous pouvons réaliser votre clip, captation live et after movie.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Studio -->
+<div id="container-studio" class="container-studio container-type background-white">
+    <div class="container">
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Studio Vidéos</h2>
+        <hr class="col-md-4 col-md-offset-4">
+        <div class="text-center">
+            <p>Besoin d'enregistrer/mixer une chanson, un album , un 16 mesures dans un cadre professionnel. Le studio Le Maquis vous accueille pour vos projets musicaux ou audio-visuels.</p>
+            <img class="img-studio" src="img/DSC_0005.jpg" alt="studio vidéo">
+            <p class="citation">Le Maquis est un collectif regroupant des chanteurs/M.C, Beatmakers et Musiciens. Possibilité de création d'ateliers ou de cours particuliers.</p>
+        </div>
+    </div>
+</div>
+<!-- Artistes -->
+<div id="container-artiste" class="container-artiste container-type background-black">
+    <div class="container">
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Artistes</h2>
+        <hr class="col-md-4 col-md-offset-4">
+        <div class="row gallery">
+        {% for artiste in artistes %}
+            <div class="col-6 col-md-4 artiste-img">
+                <a href={{ path('show_artiste', {'id': artiste.id}) }}><img src={{ artiste.image }} alt="Le Maquis artiste"></a>
+            </div>
+        {% endfor %}
         </div>
     </div>
 </div>
@@ -189,15 +209,18 @@
             <!-- Block informations -->
             <div class="col-md-3 text-center">
                 <ul class="list-unstyled mb-0">
-                    <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <li>
+                        <img class="contact-img" src="img/map_mono.png" alt="Localisation">
                         <p>Dijon, 21000, FR</p>
                     </li>
 
-                    <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <li>
+                        <img class="contact-img" src="img/smartphone_mono.png" alt="Téléphone">
                         <p>+33 6 00 00 00 00</p>
                     </li>
 
-                    <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <li>
+                        <img class="contact-img" src="img/email_mono.png" alt="Email">
                         <p>lemaquilabel@gmail.com</p>
                     </li>
                 </ul>
