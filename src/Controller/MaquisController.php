@@ -40,6 +40,7 @@ class MaquisController extends AbstractController
             'controller_name' => 'MaquisController',
             'artistes' => $artistes,
             'concerts' => $concerts,
+            'albums' => $albums,
             'contactForm' => $form->createView()
         ]);
     }
