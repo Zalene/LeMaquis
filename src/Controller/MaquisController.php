@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Artiste;
 use App\Entity\Contact;
-use App\Form\ArtisteType;
 use App\Form\ContactType;
 use App\Repository\AlbumRepository;
 use App\Repository\ArtisteRepository;
