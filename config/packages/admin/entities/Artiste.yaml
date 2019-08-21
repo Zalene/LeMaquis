@@ -6,14 +6,17 @@ easy_admin:
         fields:
           - {property: 'name', label: "Nom de l'artiste"}
           - {property: 'bio', label: "Biographie"}
-          - {property: 'image'}
+          - {property: 'imageFile', label: "Upload d'image", type: 'vich_image'}
       list:
         fields:
           - {property: 'id', label: "N°"}
           - {property: 'name', label: "Artiste"}
-          - {property: 'image', label: "Image"}
+          - {property: 'image', label: "Image", type: 'image', base_path: '%app.path.artistes_image%'}
           - {property: 'albums', label: "Albums"}
           - {property: 'concerts', label: "Concerts"}
+        show:
+          fields:
+            - {property: 'image', label: "Image", type: 'image', base_path: '%app.path.artistes_image%'}
         actions:
           - {name: 'new', label: 'Ajouter', icon: 'plus'}
           - {name: 'search', label: 'Recherche'}

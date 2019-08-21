@@ -4,10 +4,13 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArtisteRepository")
+ * @Vich\Uploadable
  */
 class Artiste
 {
@@ -34,6 +37,12 @@ class Artiste
     private $image;
 
     /**
+     * @Vich\UploadableField(mapping="artistes_image", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+
+    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Album", mappedBy="artiste")
      */
     private $albums;
@@ -42,6 +51,12 @@ class Artiste
      * @ORM\ManyToMany(targetEntity="App\Entity\Concert", mappedBy="artiste")
      */
     private $concerts;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime|null
+     */
+    private $updatedAt;
 
     public function __construct()
     {
@@ -83,10 +98,26 @@ class Artiste
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 
+        return $this;
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        if ($image) {
+            $this->updatedAt = new \DateTime('now');
+        }
+        
         return $this;
     }
 
@@ -149,5 +180,17 @@ class Artiste
     public function __toString()
     {
         return $this->name;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
     }
 }
