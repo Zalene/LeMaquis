@@ -7,11 +7,13 @@
 <div class="container-gallery">
     <div class="container-wrap">
         <div class="text-gallery text-center">
-            {% for message in app.flashes('success') %}
-            <div class="alert alert-success">
-                {{ message }}
+            <div class="validation-email">
+                {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
 
             <h1>Le Maquis</h1>
             <ul class="reseaux-sociaux list-inline">
