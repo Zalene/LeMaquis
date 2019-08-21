@@ -23,7 +23,7 @@ class ContactNotification {
     }
 
     public function notify(Contact $contact) {
-        $message = (new \Swift_Message('Mr,Mme ' . $contact->getLastname()))
+        $message = (new \Swift_Message('Le Maquis - Formulaire de contact'))
             ->setFrom($contact->getEmail())
             ->setTo('bastien.gauthier.dev@gmail.com')
             ->setReplyTo($contact->getEmail())
