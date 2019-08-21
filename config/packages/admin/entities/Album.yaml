@@ -7,7 +7,6 @@ easy_admin:
           - {property: 'title', label: "Nom de l'album"}
           - {property: 'date', label: "Date de sortie"}
           - {property: 'description'}
-
           - {property: 'imgFile', label: "Upload d'image", type: 'vich_image'}
           - {property: 'artiste', label: "Artistes"}
       list:

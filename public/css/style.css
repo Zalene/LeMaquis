@@ -102,10 +102,8 @@ footer p {
 
 .navbar .navbar-collapse {
     font-weight: bold;
-}
-
-#menu-scroll header {
-    height: 80px;
+    text-transform: uppercase;
+    font-size: 14px;
 }
 
 #menu-scroll header.fixed {
@@ -189,30 +187,54 @@ footer p {
 }
 
 .border-concert {
-    border: #fff 1px solid;
-    border-radius: 0.25em;
+    border: rgba(175, 175, 175, 0.2) 1px solid;
+    border-radius: 0.5em;
     width: auto;
     margin: 0 25px 0 25px;
     padding: 10px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(175, 175, 175, 0.1);
 }
 
 .container-concert .h1-responsive {
     margin: 0 0 24px 0 !important;
 }
 
+.container-concert hr {
+    background: #fff;
+}
+
 .one-concert a {
     text-decoration: none;
 }
 
+.btn-concert {
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.btn-concert i {
+    margin-right: 10px;
+    vertical-align:middle;
+}
+
+.btn-concert span {
+    vertical-align:middle;
+}
+
 /***** ALBUMS *****/
-.gallery-albums {
-    padding-top: 101px;
+.album-img {
+    padding-top: 15px;
 }
 
 .album-img img {
+    border: rgba(175, 175, 175, 0.2) 1px solid;
+    border-radius: 0.5em;
     height: 250px;
     width: 250px;
+}
+
+.artiste-album {
+    padding-top: 10px;
 }
 
 /***** CLIP *****/
@@ -237,10 +259,12 @@ footer p {
 
 /***** ARTISTES *****/
 .artiste-img {
-    padding-top: 15px; 
+    padding-top: 15px;
 }
 
 .container-artiste img {
+    border: rgba(175, 175, 175, 0.2) 1px solid;
+    border-radius: 0.5em;
     height: 250px;
     width: 250px;
 }
