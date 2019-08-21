@@ -214,6 +214,11 @@ footer p {
     padding-top: 101px;
 }
 
+.album-img img {
+    height: 250px;
+    width: 250px;
+}
+
 /***** CLIP *****/
 
 

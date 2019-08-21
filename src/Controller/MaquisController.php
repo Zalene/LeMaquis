@@ -9,6 +9,7 @@ use App\Form\ContactType;
 use App\Repository\AlbumRepository;
 use App\Repository\ArtisteRepository;
 use App\Repository\ConcertRepository;
+use App\Notification\ContactNotification;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,7 +20,7 @@ class MaquisController extends AbstractController
     /** 
      *@Route("/", name="home")
      */
-    public function home(AlbumRepository $repoAl, ArtisteRepository $repoA, ConcertRepository $repoC, Request $request)
+    public function home(AlbumRepository $repoAl, ArtisteRepository $repoA, ConcertRepository $repoC, Request $request, ContactNotification $contactNotification)
     {
         $artistes = $repoA->findAll();
         $concerts = $repoC->findAll();
@@ -30,7 +31,8 @@ class MaquisController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            dd($contact);
+            /*dd($contact);*/
+            $contactNotification->notify($contact);
             /*
             return $this->redirectToRoute();
             */

@@ -7,15 +7,19 @@ easy_admin:
           - {property: 'title', label: "Nom de l'album"}
           - {property: 'date', label: "Date de sortie"}
           - {property: 'description'}
-          - {property: 'img', label: "Image"}
+
+          - {property: 'imgFile', label: "Upload d'image", type: 'vich_image'}
           - {property: 'artiste', label: "Artistes"}
       list:
         fields:
           - {property: 'id', label: "N°"}
           - {property: 'title', label: "Nom de l'album"}
           - {property: 'date', label: "Date de sortie"}
-          - {property: 'img', label: "Image"}
+          - {property: 'img', label: "Image", type: 'image', base_path: '%app.path.albums_image%'}
           - {property: 'artiste', label: "Artistes"}
+        show:
+          fields:
+            - {property: 'img', label: "Image", type: 'image', base_path: '%app.path.albums_image%'}
         actions:
           - {name: 'new', label: 'Ajouter', icon: 'plus'}
           - {name: 'search', label: 'Recherche'}

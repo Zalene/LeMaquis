@@ -2,12 +2,15 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\Common\Collections\ArrayCollection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AlbumRepository")
+ * @Vich\Uploadable
  */
 class Album
 {
@@ -42,6 +45,18 @@ class Album
      * @ORM\Column(type="string", length=255)
      */
     private $img;
+
+    /**
+     * @Vich\UploadableField(mapping="albums_image", fileNameProperty="img")
+     * @var File
+     */
+    private $imgFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime|null
+     */
+    private $updatedAt;
 
     public function __construct()
     {
@@ -127,8 +142,36 @@ class Album
         return $this;
     }
 
+    public function getImgFile()
+    {
+        return $this->imgFile;
+    }
+
+    public function setImgFile(File $img = null)
+    {
+        $this->imgFile = $img;
+
+        if ($img) {
+            $this->updatedAt = new \DateTime('now');
+        }
+        
+        return $this;
+    }
+
     public function __toString()
     {
         return $this->title;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
     }
 }
