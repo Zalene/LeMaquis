@@ -298,6 +298,13 @@ footer p {
 
 .btn-contact {
     margin-top: 15px;
+    background-color: rgb(135, 60, 255);
+    border-color: rgb(135, 60, 255);
+}
+
+.btn-contact:hover {
+    background-color: rgb(119, 35, 255);
+    border-color: rgb(119, 35, 255);
 }
 
 .contact-img {
@@ -308,4 +315,15 @@ footer p {
 .validation-email {
     width: 60%;
     margin: auto;
+}
+
+/***** LOGIN *****/
+.btn-login {
+    background-color: rgb(135, 60, 255);
+    border-color: rgb(135, 60, 255);
+}
+
+.btn-login:hover {
+    background-color: rgb(119, 35, 255);
+    border-color: rgb(119, 35, 255);
 }
