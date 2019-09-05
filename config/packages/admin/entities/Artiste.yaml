@@ -5,7 +5,6 @@ easy_admin:
       form:
         fields:
           - {property: 'name', label: "Nom de l'artiste"}
-          - {property: 'bio', label: "Biographie"}
           - {property: 'imageFile', label: "Upload d'image", type: 'vich_image'}
       list:
         fields:

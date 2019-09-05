@@ -27,11 +27,6 @@ class Artiste
     private $name;
 
     /**
-     * @ORM\Column(type="text")
-     */
-    private $bio;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $image;
@@ -77,18 +72,6 @@ class Artiste
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getBio(): ?string
-    {
-        return $this->bio;
-    }
-
-    public function setBio(string $bio): self
-    {
-        $this->bio = $bio;
 
         return $this;
     }

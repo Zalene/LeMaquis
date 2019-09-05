@@ -7,7 +7,6 @@ easy_admin:
           - {property: 'name', label: "Nom du concert"}
           - {property: 'date', label: "Date du concert"}
           - {property: 'town', label: "Lieu du concert"}
-          - {property: 'description'}
           - {property: 'artiste', label: "Artistes"}
       list:
         fields:

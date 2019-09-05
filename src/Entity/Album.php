@@ -37,11 +37,6 @@ class Album
     private $date;
 
     /**
-     * @ORM\Column(type="text")
-     */
-    private $description;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $img;
@@ -57,6 +52,11 @@ class Album
      * @var \DateTime|null
      */
     private $updatedAt;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $download;
 
     public function __construct()
     {
@@ -118,18 +118,6 @@ class Album
         return $this;
     }
 
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
     public function getImg(): ?string
     {
         return $this->img;
@@ -171,6 +159,18 @@ class Album
     public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getDownload(): ?string
+    {
+        return $this->download;
+    }
+
+    public function setDownload(?string $download): self
+    {
+        $this->download = $download;
 
         return $this;
     }

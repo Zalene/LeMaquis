@@ -187,12 +187,12 @@ footer p {
 }
 
 .border-concert {
-    border: rgba(175, 175, 175, 0.2) 1px solid;
+    border: rgba(175, 175, 175, 0.0) 1px solid;
     border-radius: 0.5em;
     width: auto;
     margin: 0 25px 0 25px;
     padding: 10px;
-    background: rgba(175, 175, 175, 0.1);
+    background: rgba(175, 175, 175, 0.0);
 }
 
 .container-concert .h1-responsive {
@@ -205,6 +205,16 @@ footer p {
 
 .one-concert a {
     text-decoration: none;
+}
+
+.one-concert button {
+    color: rgb(135, 60, 255);
+    border-color: rgb(135, 60, 255);
+}
+
+.one-concert button:hover {
+    background-color: rgb(119, 35, 255);
+    border-color: #fff;
 }
 
 .btn-concert {

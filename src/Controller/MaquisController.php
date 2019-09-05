@@ -42,14 +42,4 @@ class MaquisController extends AbstractController
             'contactForm' => $form->createView()
         ]);
     }
-
-    /**
-     * @Route("/artistes/{id}", name="show_artiste")
-     */
-    public function showArtiste(Artiste $artiste)
-    {
-        return $this->render('artistes/showArtiste.html.twig', [
-            'artiste' => $artiste
-        ]);
-    }
 }
