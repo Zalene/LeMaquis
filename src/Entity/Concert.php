@@ -38,6 +38,11 @@ class Concert
      */
     private $artiste;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $link;
+
     public function __construct()
     {
         $this->artiste = new ArrayCollection();
@@ -113,5 +118,17 @@ class Concert
     public function __toString()
     {
         return $this->name;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(?string $link): self
+    {
+        $this->link = $link;
+
+        return $this;
     }
 }

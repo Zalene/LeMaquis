@@ -94,6 +94,10 @@ footer p {
     font-size: 13px;
 }
 
+.title-page {
+    margin-top: 30px;
+}
+
 /***** MENU *****/
 .navbar .navbar-brand {
     font-family: 'Another_America';
@@ -120,14 +124,6 @@ footer p {
     top: 0;
     left: 0;
 }
-
-.one-artiste {
-    padding-top: 101px;
-}
-
-/*div:target {
-    padding-top: 101px;
-}*/
 
 /***** GALLERY *****/
 .container-gallery {

@@ -43,7 +43,7 @@
                                         <tr>
                                             <td>{% for artiste in concert.artiste %} {{ artiste }} {% endfor %}</td>
                                             <td>{{ concert.town }}</td>
-                                            <td><a href="#"><button type="button" class="btn btn-outline-info btn-concert">Infos</button></a></td>
+                                            <td><a href={{ concert.link }}><button type="button" class="btn btn-outline-info btn-concert">Infos</button></a></td>
                                         </tr>
                                     {% endfor %}
                                     </table>
@@ -238,8 +238,4 @@
         </div>
     </div>
 </div>
-
-<!-- Enlever une fois fini -->
-<!-- <a href="{{ app.request.uri }}admin">Admintest</a> -->
-
 {% endblock %}

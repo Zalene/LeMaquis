@@ -42,4 +42,12 @@ class MaquisController extends AbstractController
             'contactForm' => $form->createView()
         ]);
     }
+
+    /**
+     * @Route("/mentions", name="mentions")
+     */
+    public function mentions()
+    {
+        return $this->render('maquis/mentions.html.twig');
+    }
 }
