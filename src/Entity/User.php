@@ -101,7 +101,6 @@ class User implements UserInterface
 
     }
 
-    /* C'est probablement cette partie qui merde */
     public function getRoles(): array
     {
         $roles = $this->roles;
