@@ -106,9 +106,4 @@ class User implements UserInterface
     {
         return [$this->roles];
     }
-
-    public function setRoles(Collection $roles)
-    {
-        $this->roles = $role;
-    }
 }
