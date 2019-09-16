@@ -244,9 +244,6 @@ footer p {
     padding-top: 10px;
 }
 
-/***** CLIP *****/
-
-
 /***** SERVICES *****/
 .service-item h3 {
     margin-top: 15px;
@@ -255,13 +252,6 @@ footer p {
 .service-img {
     width: 70px;
     height: 70px;
-}
-
-/***** STUDIO *****/
-.img-studio {
-    margin: 30px 0 30px 0;
-    width: 682px;
-    height: 383x;
 }
 
 /***** ARTISTES *****/
@@ -324,3 +314,23 @@ footer p {
     background-color: rgb(119, 35, 255);
     border-color: rgb(119, 35, 255);
 }
+
+/***** MEDIA QUERIES *****/
+
+@media only screen and (min-width : 321px) and (max-width : 736px) {
+        .clip-video iframe {
+            width: 100%;
+            height: 255px;
+            margin: auto;
+        }
+
+        .album-img img {
+            height: 210px;
+            width: 210px;
+        }
+
+        .container-artiste img {
+            height: 210px;
+            width: 210px;
+        }
+    }

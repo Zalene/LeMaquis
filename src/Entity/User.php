@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -46,9 +47,9 @@ class User implements UserInterface
     public $confirm_password;
 
     /**
-     * @ORM\Column(type="json")
+     * @ORM\Column(type="string", length=255)
      */
-    private $roles = [];
+    private $roles;
 
     public function getId(): ?int
     {
@@ -101,12 +102,13 @@ class User implements UserInterface
 
     }
 
-    public function getRoles(): array
+    public function getRoles()
     {
-        $roles = $this->roles;
+        return [$this->roles];
+    }
 
-        $roles[] = 'ROLE_ADMIN';
-
-        return array_unique($roles);
+    public function setRoles(Collection $roles)
+    {
+        $this->roles = $role;
     }
 }

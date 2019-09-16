@@ -5,6 +5,7 @@ security:
     role_hierarchy:
         ROLE_USER: ROLE_USER
         ROLE_ADMIN: ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
@@ -37,5 +38,5 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/admin/, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
