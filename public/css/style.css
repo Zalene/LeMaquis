@@ -236,8 +236,8 @@ footer p {
 .album-img img {
     border: rgba(175, 175, 175, 0.2) 1px solid;
     border-radius: 0.5em;
-    height: 250px;
-    width: 250px;
+    height: 210px;
+    width: 210px;
 }
 
 .artiste-album {
@@ -262,8 +262,8 @@ footer p {
 .container-artiste img {
     border: rgba(175, 175, 175, 0.2) 1px solid;
     border-radius: 0.5em;
-    height: 250px;
-    width: 250px;
+    height: 210px;
+    width: 210px;
 }
 
 /***** CONTACT *****/
@@ -318,19 +318,27 @@ footer p {
 /***** MEDIA QUERIES *****/
 
 @media only screen and (min-width : 321px) and (max-width : 736px) {
-        .clip-video iframe {
-            width: 100%;
-            height: 255px;
-            margin: auto;
-        }
-
-        .album-img img {
-            height: 210px;
-            width: 210px;
-        }
-
-        .container-artiste img {
-            height: 210px;
-            width: 210px;
-        }
+    .album-img img {
+        height: 210px;
+        width: 210px;
     }
+
+    .container-artiste img {
+        height: 210px;
+        width: 210px;
+    }
+}
+
+@media only screen and (max-width : 425px) {
+    .clip-video iframe {
+        height: 255px;
+        margin: auto;
+    }
+}
+
+@media only screen and (min-width : 426px) {
+    .clip-video iframe {
+        width: 560px;
+        margin: auto;
+    }
+}

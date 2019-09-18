@@ -68,7 +68,7 @@
         <div class="row gallery">
         <p class="col-12 text-center">Clique sur la pochette pour télécharger l'album !</p>
         {% for album in albums %}
-            <div class="col-6 col-md-4 album-img text-center">
+            <div class="col-12 col-md-4 album-img text-center">
                 <a href={{ album.download }}><img src=/img/albums/{{ album.img }} alt="Le Maquis album"></a>
                 <p class="citation artiste-album">{% for artiste in album.artiste %} {{ artiste }} {% endfor %}</p>
             </div>
@@ -82,7 +82,7 @@
         <h2 class="h1-responsive font-weight-bold text-center my-4">Dernier clip</h2>
         <hr class="col-md-4 col-md-offset-4 col-11">
         <div class="clip-video text-center">
-            <iframe width="560" height="315" src="https://youtube.com/embed/66hPP7OCwCc?autoplay=1&controls=1&showinfo=0&autohide=1&mute=1&loop=1&playlist=66hPP7OCwCc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe height="315" src="https://youtube.com/embed/66hPP7OCwCc?autoplay=1&controls=1&showinfo=0&autohide=1&mute=1&loop=1&playlist=66hPP7OCwCc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 </div>
@@ -131,7 +131,7 @@
         <div class="text-center">
             <p>Le Maquis réalise votre clip,  captation live ou after-movie de votre soirée/concert.</p>
             <div class="clip-video text-center">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/PdsScq7JrhI?autoplay=1&controls=1&showinfo=0&autohide=1&mute=1&loop=1&playlist=66hPP7OCwCc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe height="315" src="https://www.youtube.com/embed/PdsScq7JrhI?autoplay=1&controls=1&showinfo=0&autohide=1&mute=1&loop=1&playlist=66hPP7OCwCc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <p class="citation">Le Maquis est un collectif regroupant des chanteurs/M.C, Beatmakers, Musiciens et Vidéastes. Possibilité de création d'ateliers ou de cours particuliers.</p>
         </div>
@@ -144,7 +144,7 @@
         <hr class="col-md-4 col-md-offset-4 col-11">
         <div class="row gallery">
         {% for artiste in artistes %}
-            <div class="col-6 col-md-4 artiste-img text-center">
+            <div class="col-12 col-md-4 artiste-img text-center">
                 <img src=/img/artistes/{{ artiste.image }} alt="Le Maquis artiste">
             </div>
         {% endfor %}
